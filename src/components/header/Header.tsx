@@ -2,7 +2,6 @@ import styled from "styled-components"
 import * as FcIcons from "react-icons/fc"
 import * as FiIcons from "react-icons/fi"
 import { useState } from "react"
-import { Link } from "react-router-dom"
 
 type Props = {
     openNavbar: boolean;
@@ -24,7 +23,7 @@ const Right = styled.a`
     justify-content:center;
     align-items:center;
     text-decoration: none;
-        color: black;
+    color: black;
     gap:10px;
 
     svg{
