@@ -65,7 +65,7 @@ const Close = styled.div`
     justify-content: center;
     align-items: center;
     gap: 8px;
-    height: 1em;
+    height: 2.5em;
     width: 3em;
     padding-bottom:15px;
     margin-right:20px;
@@ -89,7 +89,6 @@ const Close = styled.div`
 const Input = styled.h2`
     font-size:18px;
     padding-right: 2em;
-    cursor: pointer;
 `
 
 const Search = styled.div`
@@ -103,6 +102,7 @@ const Search = styled.div`
     padding-left: 10px;
     padding-bottom:15px;
     border-bottom:1px solid black;
+    cursor: pointer;
 `
 
 function Header() {
