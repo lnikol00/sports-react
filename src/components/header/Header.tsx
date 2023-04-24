@@ -138,6 +138,8 @@ const MenuLink = styled.li<Props>`
     list-style:none;
 
     a{
+        color: black;
+        text-decoration:none;
         font-size:1em;
         font-weight:600;
         cursor: pointer;
