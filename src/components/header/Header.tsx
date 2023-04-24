@@ -5,11 +5,13 @@ import * as HiIcons from "react-icons/hi"
 import { useState } from "react"
 
 type Props = {
-    openNavbar: boolean;
+    openNavbar?: boolean;
+    padding?: string | undefined;
+    margin?: string | undefined;
 }
 
 const HeaderContainer = styled.div`
-    background-color: rgb(236, 232, 232);
+    background-color: #f5f5f5;
 `
 const Wrapper = styled.div`
     display: flex;
@@ -17,6 +19,13 @@ const Wrapper = styled.div`
     align-items: center;
     height: 60px;
     padding: 0rem 5rem;
+    position:sticky;
+    top:0;
+    z-index:4;
+
+    @media screen and (max-width: 600px) {
+        padding: 0rem 2rem;
+    }
 `
 
 const Right = styled.a`
@@ -57,11 +66,17 @@ const Navbar = styled.nav<Props>`
     position: absolute;
     top:0;
     left:${(props) => (props.openNavbar ? "0" : "-100%")};
-    width:325px;
+    width:340px;
     height:100vh;
     padding-top:30px;
     background-color:rgb(255, 200, 78);
-    transition:ease 0.5s;
+    transition:all 1s ease;
+    z-index:5;
+    overflow-y: scroll;
+
+    @media screen and (max-width:500px){
+        width:330px;
+    }
 `
 
 const Close = styled.div`
@@ -114,14 +129,14 @@ const MenuItems = styled.ul`
     width:300px;
 `
 
-const MenuLink = styled.li`
+const MenuLink = styled.li<Props>`
     display:flex;
     justify-content: ${(props) => (props.content)};
     align-items:center;
-    padding:15px 20px;
+    /* padding:15px 20px; */
+    padding: ${(props) => (props.padding)};
     width:300px;
     list-style:none;
-    margin-bottom:5px;
 
     div{
         display:flex;
@@ -141,12 +156,29 @@ const MenuLink = styled.li`
     }
 `
 
+const HiddenLink = styled.div`
+    background-color:rgba(254, 187, 42, 0.89);
+`
+
 function Header() {
 
     const [open, setOpen] = useState<boolean>(false)
+    const [menu1, setMenu1] = useState<boolean>(false)
+    const [menu2, setMenu2] = useState<boolean>(false)
+    const [menu3, setMenu3] = useState<boolean>(false)
 
     const openNav = () => {
         setOpen(!open)
+    }
+
+    const openMenu1 = () => {
+        setMenu1(!menu1)
+    }
+    const openMenu2 = () => {
+        setMenu2(!menu2)
+    }
+    const openMenu3 = () => {
+        setMenu3(!menu3)
     }
 
     return (
@@ -176,29 +208,54 @@ function Header() {
                     </Close>
                 </Search>
                 <MenuItems>
-                    <MenuLink><a>News</a></MenuLink>
-                    <MenuLink content="space-between">
+                    <MenuLink padding="15px 20px"><a>News</a></MenuLink>
+                    <MenuLink content="space-between" padding="15px 20px">
                         <a>Foootball</a>
-                        <div>
+                        <div onClick={openMenu1} >
                             <HiIcons.HiOutlineChevronRight />
                         </div>
                     </MenuLink>
-                    <MenuLink><a>Basketball</a></MenuLink>
-                    <MenuLink><a>Tennis</a></MenuLink>
-                    <MenuLink content="space-between">
+                    <HiddenLink>
+                        {menu1 ? <div>
+                            <MenuLink padding="12px 30px"><a>Football</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>American football</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>Futsal</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>Australian football</a></MenuLink>
+                        </div> : null}
+                    </HiddenLink>
+                    <MenuLink padding="15px 20px"><a>Basketball</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a>Tennis</a></MenuLink>
+                    <MenuLink content="space-between" padding="15px 20px">
                         <a>Racing</a>
-                        <div>
+                        <div onClick={openMenu2}>
                             <HiIcons.HiOutlineChevronRight />
                         </div>
                     </MenuLink>
-                    <MenuLink><a>Handball</a></MenuLink>
-                    <MenuLink content="space-between">
+                    <HiddenLink>
+                        {menu2 ? <div>
+                            <MenuLink padding="12px 30px"><a>NASCAR</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>Formula 1</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>IndyCar</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>NHRA</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>Moto GP</a></MenuLink>
+                        </div> : null}
+                    </HiddenLink>
+                    <MenuLink padding="15px 20px"><a>Handball</a></MenuLink>
+                    <MenuLink content="space-between" padding="15px 20px">
                         <a>E-sports</a>
-                        <div>
+                        <div onClick={openMenu3}>
                             <HiIcons.HiOutlineChevronRight />
                         </div>
                     </MenuLink>
-                    <MenuLink><a>Forum</a></MenuLink>
+                    <HiddenLink>
+                        {menu3 ? <div>
+                            <MenuLink padding="12px 30px"><a>Leauge of Legends</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>Valorant</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>CSGO</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a>Rocket Leauge</a></MenuLink>
+                        </div> : null}
+                    </HiddenLink>
+                    <MenuLink padding="15px 20px"><a>Forum</a></MenuLink>
                 </MenuItems>
             </Navbar>
 
