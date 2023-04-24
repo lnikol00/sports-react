@@ -8,6 +8,7 @@ type Props = {
     openNavbar?: boolean;
     padding?: string | undefined;
     margin?: string | undefined;
+    rotateIcon?: boolean;
 }
 
 const HeaderContainer = styled.div`
@@ -70,7 +71,7 @@ const Navbar = styled.nav<Props>`
     height:100vh;
     padding-top:30px;
     background-color:rgb(255, 200, 78);
-    transition:all 1s ease;
+    transition: all 500ms ease;
     z-index:5;
     overflow-y: scroll;
 
@@ -88,7 +89,6 @@ const Close = styled.div`
     height: 2.5em;
     width: 1.5em;
     padding-bottom:15px;
-    /* margin-right:20px; */
     margin-left:3em;
     cursor: pointer;
 
@@ -133,17 +133,9 @@ const MenuLink = styled.li<Props>`
     display:flex;
     justify-content: ${(props) => (props.content)};
     align-items:center;
-    /* padding:15px 20px; */
     padding: ${(props) => (props.padding)};
     width:300px;
     list-style:none;
-
-    div{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        cursor: pointer;
-    }
 
     a{
         font-size:1em;
@@ -155,14 +147,25 @@ const MenuLink = styled.li<Props>`
         background-color: #ffb81b;
     }
 `
+const Rotate = styled.div<Props>`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor: pointer;
+    transform:rotate(${(props) => (props.rotateIcon ? "90deg" : "0")});
+    transition: all 0.5s ease;
+`
 
 const HiddenLink = styled.div`
-    background-color:rgba(254, 187, 42, 0.89);
+    background-color:rgba(254, 187, 42, 0.89);  
 `
 
 function Header() {
 
     const [open, setOpen] = useState<boolean>(false)
+    const [rotate1, setRotate1] = useState<boolean>(false)
+    const [rotate2, setRotate2] = useState<boolean>(false)
+    const [rotate3, setRotate3] = useState<boolean>(false)
     const [menu1, setMenu1] = useState<boolean>(false)
     const [menu2, setMenu2] = useState<boolean>(false)
     const [menu3, setMenu3] = useState<boolean>(false)
@@ -173,12 +176,15 @@ function Header() {
 
     const openMenu1 = () => {
         setMenu1(!menu1)
+        setRotate1(!rotate1)
     }
     const openMenu2 = () => {
         setMenu2(!menu2)
+        setRotate2(!rotate2)
     }
     const openMenu3 = () => {
         setMenu3(!menu3)
+        setRotate3(!rotate3)
     }
 
     return (
@@ -208,51 +214,51 @@ function Header() {
                     </Close>
                 </Search>
                 <MenuItems>
-                    <MenuLink padding="15px 20px"><a>News</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a href="#">News</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px">
-                        <a>Foootball</a>
-                        <div onClick={openMenu1} >
+                        <a href="#">Foootball</a>
+                        <Rotate onClick={openMenu1} rotateIcon={rotate1}>
                             <HiIcons.HiOutlineChevronRight />
-                        </div>
+                        </Rotate>
                     </MenuLink>
                     <HiddenLink>
                         {menu1 ? <div>
-                            <MenuLink padding="12px 30px"><a>Football</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>American football</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>Futsal</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>Australian football</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Football</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">American football</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Futsal</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Australian football</a></MenuLink>
                         </div> : null}
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><a>Basketball</a></MenuLink>
-                    <MenuLink padding="15px 20px"><a>Tennis</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a href="#">Basketball</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a href="#">Tennis</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px">
-                        <a>Racing</a>
-                        <div onClick={openMenu2}>
+                        <a href="#">Racing</a>
+                        <Rotate onClick={openMenu2} rotateIcon={rotate2}>
                             <HiIcons.HiOutlineChevronRight />
-                        </div>
+                        </Rotate>
                     </MenuLink>
                     <HiddenLink>
                         {menu2 ? <div>
-                            <MenuLink padding="12px 30px"><a>NASCAR</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>Formula 1</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>IndyCar</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>NHRA</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>Moto GP</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">NASCAR</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Formula 1</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">IndyCar</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">NHRA</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Moto GP</a></MenuLink>
                         </div> : null}
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><a>Handball</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a href="#">Handball</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px">
-                        <a>E-sports</a>
-                        <div onClick={openMenu3}>
+                        <a href="#">E-sports</a>
+                        <Rotate onClick={openMenu3} rotateIcon={rotate3}>
                             <HiIcons.HiOutlineChevronRight />
-                        </div>
+                        </Rotate>
                     </MenuLink>
                     <HiddenLink>
                         {menu3 ? <div>
-                            <MenuLink padding="12px 30px"><a>Leauge of Legends</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>Valorant</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>CSGO</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a>Rocket Leauge</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Leauge of Legends</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Valorant</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">CSGO</a></MenuLink>
+                            <MenuLink padding="12px 30px"><a href="#">Rocket Leauge</a></MenuLink>
                         </div> : null}
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a>Forum</a></MenuLink>
