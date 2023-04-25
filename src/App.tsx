@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Header from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Footer from './components/footer/Footer';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -30,6 +31,7 @@ function App() {
             <Route index element={<Home />} />
           </Routes>
         </MainContainer>
+        <Footer />
       </Router>
     </>
 

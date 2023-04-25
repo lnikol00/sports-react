@@ -35,6 +35,7 @@ const Article = styled.article`
         font-size:20px;
         h2{
             padding-bottom: 20px;
+            font-size: 4rem;
         }
         p{
             padding-top: 20px;
@@ -43,7 +44,6 @@ const Article = styled.article`
     }
 
     &:nth-child(odd){
-        /* background-color:#ffb81b; */
         background-color: rgb(255, 200, 78);
     }
 `

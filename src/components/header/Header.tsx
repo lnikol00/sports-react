@@ -10,6 +10,7 @@ type Props = {
     margin?: string | undefined;
     rotateIcon?: boolean;
     background?: boolean;
+    color?: string | undefined;
 }
 
 const HeaderContainer = styled.div`
@@ -30,12 +31,13 @@ const Wrapper = styled.div`
     }
 `
 
-const Right = styled.a`
+export const Right = styled.a`
     display:flex;
     justify-content:center;
     align-items:center;
     text-decoration: none;
-    color: black;
+    /* color: black;*/
+    color: ${(props) => (props.color)};
     gap:10px;
 
     svg{
@@ -199,7 +201,7 @@ function Header() {
                     <div></div>
                     <div></div>
                 </Left>
-                <Right href="/">
+                <Right href="/" color="black">
                     <div>
                         <FcIcons.FcNews />
                     </div>
