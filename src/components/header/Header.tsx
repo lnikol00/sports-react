@@ -9,10 +9,14 @@ type Props = {
     padding?: string | undefined;
     margin?: string | undefined;
     rotateIcon?: boolean;
+    background?: boolean;
 }
 
 const HeaderContainer = styled.div`
     background-color: #f5f5f5;
+    position:sticky;
+    top:0;
+    z-index:4;
 `
 const Wrapper = styled.div`
     display: flex;
@@ -20,9 +24,6 @@ const Wrapper = styled.div`
     align-items: center;
     height: 60px;
     padding: 0rem 5rem;
-    position:sticky;
-    top:0;
-    z-index:4;
 
     @media screen and (max-width: 600px) {
         padding: 0rem 2rem;
@@ -136,6 +137,7 @@ const MenuLink = styled.li<Props>`
     padding: ${(props) => (props.padding)};
     width:300px;
     list-style:none;
+    background-color: ${(props) => (props.background ? "#ffb81b" : "none")};
 
     a{
         color: black;
@@ -159,7 +161,7 @@ const Rotate = styled.div<Props>`
 `
 
 const HiddenLink = styled.div`
-    background-color:rgba(254, 187, 42, 0.89);  
+    background-color:rgba(254, 189, 48, 0.89);  
 `
 
 function Header() {
@@ -216,8 +218,8 @@ function Header() {
                     </Close>
                 </Search>
                 <MenuItems>
-                    <MenuLink padding="15px 20px"><a href="#">News</a></MenuLink>
-                    <MenuLink content="space-between" padding="15px 20px">
+                    <MenuLink padding="15px 20px"><a href="/">Home</a></MenuLink>
+                    <MenuLink content="space-between" padding="15px 20px" background={rotate1}>
                         <a href="#">Foootball</a>
                         <Rotate onClick={openMenu1} rotateIcon={rotate1}>
                             <HiIcons.HiOutlineChevronRight />
@@ -233,7 +235,7 @@ function Header() {
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a href="#">Basketball</a></MenuLink>
                     <MenuLink padding="15px 20px"><a href="#">Tennis</a></MenuLink>
-                    <MenuLink content="space-between" padding="15px 20px">
+                    <MenuLink content="space-between" padding="15px 20px" background={rotate2}>
                         <a href="#">Racing</a>
                         <Rotate onClick={openMenu2} rotateIcon={rotate2}>
                             <HiIcons.HiOutlineChevronRight />
@@ -249,7 +251,7 @@ function Header() {
                         </div> : null}
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a href="#">Handball</a></MenuLink>
-                    <MenuLink content="space-between" padding="15px 20px">
+                    <MenuLink content="space-between" padding="15px 20px" background={rotate3}>
                         <a href="#">E-sports</a>
                         <Rotate onClick={openMenu3} rotateIcon={rotate3}>
                             <HiIcons.HiOutlineChevronRight />

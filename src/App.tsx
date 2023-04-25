@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './components/header/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -21,10 +23,14 @@ function App() {
 
     <>
       <AppContainer />
-      <Header />
-      <MainContainer>
-
-      </MainContainer>
+      <Router>
+        <Header />
+        <MainContainer>
+          <Routes>
+            <Route index element={<Home />} />
+          </Routes>
+        </MainContainer>
+      </Router>
     </>
 
   );
