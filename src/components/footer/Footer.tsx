@@ -91,7 +91,7 @@ function Footer() {
             <Center>
                 <a href="info">About us</a>
                 <a href="newsletter">Newsletter</a>
-                <a href="">Careers</a>
+                <a href="carrer">Careers</a>
             </Center>
             <Image src={image} alt="slika" />
             <Bottom>

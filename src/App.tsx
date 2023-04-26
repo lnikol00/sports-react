@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Footer from './components/footer/Footer';
 import Newsletter from './pages/Newsletter';
 import Info from './pages/Info';
+import Carrer from './pages/Carrer';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -33,6 +34,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='newsletter' element={<Newsletter />} />
             <Route path='info' element={<Info />} />
+            <Route path='carrer' element={<Carrer />} />
           </Routes>
         </MainContainer>
         <Footer />
