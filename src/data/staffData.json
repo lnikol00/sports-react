@@ -1,0 +1,46 @@
+{
+    "staff": [
+        {
+            "id": 1,
+            "name": "Armando Waller, Editor",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/George_Clooney_66%C3%A8me_Festival_de_Venise_%28Mostra%29_3.jpg/800px-George_Clooney_66%C3%A8me_Festival_de_Venise_%28Mostra%29_3.jpg",
+            "desc": "He has always been fascinated by technology and its ability to transform our lives. This interest led him to pursue a degree in computer science, and he has since spent his career developing cutting-edge software and applications for a variety of industries. Armando is particularly passionate about creating innovative solutions that can improve people's daily lives, and he has received numerous awards for his work in this area."
+        },
+        {
+            "id": 2,
+            "name": "Shiva Grigoryan, Executive Editor",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Johnny_Depp_2020.jpg",
+            "desc": "It's always exciting to welcome a new member to the team, and Shyiva is no exception. With decades of experience in journalism and editing, he brings a wealth of knowledge to the table. Even though he's new to SportsWeek, he's no stranger to the sport industry, having spent years as an editor at WardsAuto. Tom's always been a practical guy, and his personal cars reflect that. He values reliability and affordability."
+        },
+        {
+            "id": 3,
+            "name": "Domenico Chavdarov, West Coast Editor",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTQ3ODEyNjA4Nl5BMl5BanBnXkFtZTgwMTE4ODMyMjE@._V1_FMjpg_UX1000_.jpg",
+            "desc": "Domenico Chavdarov is a sports journalist at SportsWeek. He's been covering various sports for five years. Recently, he was given the task to lead a new sports podcast for the company. He researched and planned different topics for the show. He interviewed various sports personalities, including athletes and coaches. His podcast became an instant hit, gaining thousands of listeners each week. His success landed him a promotion to lead the company's sports content department. Domenico is now responsible for creating engaging sports content for SportsWeek's audience."
+        },
+        {
+            "id": 4,
+            "name": "Stephanos Van Buggenum, Creative Director",
+            "image": "https://www.thesun.co.uk/wp-content/uploads/2018/03/nintchdbpict0003949467681.jpg",
+            "desc": "He is the new Creative Director at SportsWeek. He brings years of experience and creativity to the position. Stephanos started his career as a graphic designer and worked his way up to the top. He is responsible for overseeing the company's creative vision and direction. He works closely with the marketing team to develop engaging campaigns and visuals. Stephanos has implemented new creative processes that have improved productivity and reduced costs. He's also responsible for the design of the company's new website, which has received widespread acclaim. Stephanos' leadership and creativity have been invaluable to SportsWeek's success."
+        },
+        {
+            "id": 5,
+            "name": "Arwen Schneiders, Motosports Editor",
+            "image": "https://www.instyle.com/thmb/bjFPmJMaKS_FzH2aXTsym3tGGYY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MileyCyrus-9fcc082c80bf442aafaded0ece338ee1.jpg",
+            "desc": "Arwen Schneiders is SportsWeek's new Motosport Editor. She's a lifelong fan of motorsports and has been covering the sport for over a decade. Arwen's passion for motorsports is evident in her work, and her articles are always informative and engaging. She works closely with the photography and videography team to create visually stunning content for the website. Arwen has also introduced new columns and features that have increased readership. Her work has been recognized by the industry, earning her several awards. Arwen is dedicated to covering all aspects of motorsports, from Formula One to MotoGP to Rally, ensuring SportsWeek is the go-to source for motorsports news and analysis."
+        },
+        {
+            "id": 6,
+            "name": "Annalisa Schirmer , Associate Editor",
+            "image": "https://media1.popsugar-assets.com/files/thumbor/2mlUkv-DdfRzgUhLwjET9pvEQJk/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2020/02/24/766/n/1922398/95a9031379203f67_GettyImages-1175734974/i/Jenna-Ortega.jpg",
+            "desc": "Annalisa Schirmer is SportsWeek's new Associate Editor. She's been a journalist for over a decade, covering various sports. Annalisa has a keen eye for detail and is responsible for ensuring the accuracy and quality of all content on the website. She works closely with the editorial team, providing feedback and guidance to writers. Annalisa has also introduced new sections to the website, including a dedicated column for amateur athletes. Her attention to detail has earned her the trust of readers and the respect of colleagues. Annalisa is committed to upholding the highest standards of journalism, ensuring SportsWeek continues to be a trusted source for sports news and analysis."
+        },
+        {
+            "id": 7,
+            "name": "Marta Bishop , Special Projects",
+            "image": "https://media1.popsugar-assets.com/files/thumbor/98luhhFPG9g8ngM2hmPMXREX8sE/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/01/05/045/n/1922398/tmp_AvvDvj_e8e6a4c0679b5a83_GettyImages-1197390293.jpg",
+            "desc": "Marta Bishop is SportsWeek's new Special Projects manager. She has years of experience in sports management and event planning. Marta is responsible for organizing and executing special events, such as charity sports tournaments and fan experiences. She works closely with the marketing team to create engaging campaigns for sponsors and partners. Marta's attention to detail and organizational skills have made her a valuable asset to the company. She's also responsible for overseeing the production of SportsWeek's annual sports guide, which is distributed to readers nationwide. Marta is passionate about creating memorable experiences for sports fans and is dedicated to ensuring every project is a success."
+        }
+    ]
+}

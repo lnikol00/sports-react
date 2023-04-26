@@ -27,7 +27,7 @@ const Article = styled.article`
     justify-content:space-between;
     align-items: center;
     flex-direction:row;
-    padding: 2rem 8rem;
+    padding: 5rem 8rem;
     /* margin-bottom: 50px; */
 
     div{

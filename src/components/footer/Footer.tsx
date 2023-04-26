@@ -4,18 +4,28 @@ import * as FcIcons from "react-icons/fc"
 import * as FaIcons from "react-icons/fa"
 import * as BsIcons from "react-icons/bs"
 import image from "../../data/img/image.jpg"
+import { Link } from "react-router-dom"
 
 const FooterContainer = styled.div`
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction:column;
     color: white;
-    height:25em;
+    height:30em;
     background-color:#000000;
-    padding:2% 5%;
+    padding:2% 15%;
 `
 const Top = styled.div`
     display:flex;
     justify-content:flex-start;
     align-items:center;
     gap: 8em;
+
+    @media screen and (max-width: 610px){
+        flex-direction: column;
+        gap: 2em;
+    }
 `
 const Links = styled.div`
     display:flex;
@@ -25,14 +35,32 @@ const Links = styled.div`
         text-decoration:none;
         color:white;
     }
+
+    @media screen and (max-width: 610px){
+        padding-left: 1em;
+    }
 `
 const Center = styled.div`
     display:flex;
     padding: 3em 0em 0em;
     gap:10em;
+
+    a{
+        text-decoration:none;
+        color:white;
+    }
+
+    @media screen and (max-width: 610px){
+        padding: 1em;
+        gap: 2em;
+    }
 `
 const Image = styled.img`
     padding: 1em 0em;
+    
+    @media screen and (max-width: 610px){
+        padding: 0em;
+    }
 `
 
 const Bottom = styled.div`
@@ -61,9 +89,9 @@ function Footer() {
                 </Links>
             </Top>
             <Center>
-                <a>About us</a>
-                <a>Newsletter</a>
-                <a>Careers</a>
+                <a href="info">About us</a>
+                <a href="newsletter">Newsletter</a>
+                <a href="">Careers</a>
             </Center>
             <Image src={image} alt="slika" />
             <Bottom>

@@ -3,6 +3,8 @@ import Header from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Footer from './components/footer/Footer';
+import Newsletter from './pages/Newsletter';
+import Info from './pages/Info';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -29,6 +31,8 @@ function App() {
         <MainContainer>
           <Routes>
             <Route index element={<Home />} />
+            <Route path='newsletter' element={<Newsletter />} />
+            <Route path='info' element={<Info />} />
           </Routes>
         </MainContainer>
         <Footer />
