@@ -8,6 +8,10 @@ type Props = {
 
 const MainContainer = styled.div`
     margin-bottom: 700px;
+
+    @media screen and (max-width: 940px){
+        margin-bottom: 800px;
+    }
 `
 
 const Form = styled.form`
@@ -27,6 +31,24 @@ const Form = styled.form`
 
     h1{
         font-size: 3em;
+
+        @media screen and (max-width: 550px){
+            font-size: 2.5em;
+        }
+        @media screen and (max-width: 460px){
+            font-size: 2em;
+        }
+    }
+
+    @media screen and (max-width: 940px){
+        transform:translate(-50%, -35%);      
+        height: 700px;
+    }
+    @media screen and (max-width: 850px){
+        transform:translate(-50%, -30%);      
+    }
+    @media screen and (max-width: 700px){
+        padding: 5em 3em;
     }
 `
 
@@ -65,12 +87,28 @@ const Top = styled.div<Props>`
         &:invalid~span{
             display: block;
         }
+
+        @media screen and (max-width: 550px){
+            font-size: 16px;
+            padding: 0;
+        }
     }
 
     span{
         padding: 0px 15px;
         color: red;
-        display: none
+        display: none;
+
+        @media screen and (max-width: 550px){
+            padding: 0;
+            font-size: 16px;
+        }
+    }
+
+    @media screen and (max-width: 900px){
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
     }
 `
 
@@ -89,6 +127,10 @@ const Center = styled.div`
 
         &:hover{
             background-color: rgba(255,255,255,0.2);
+        }
+
+        @media screen and (max-width: 450px){
+            width: 100%;
         }
     }
 
@@ -120,6 +162,11 @@ const Bottom = styled.div`
         &::placeholder{
             color: black;
         }    
+
+        @media screen and (max-width: 550px){
+            font-size: 16px;
+            padding: 0;
+        }
     }
 
     div{
@@ -147,12 +194,22 @@ const Bottom = styled.div`
         &:invalid~span{
             display: block;
         }
+
+        @media screen and (max-width: 550px){
+            font-size: 16px;
+            padding: 0;
+        }
     }
     
     span{
         padding: 0 15px;
         color: red;
         display: none;
+
+        @media screen and (max-width: 550px){
+            font-size: 16px;
+            padding: 0;
+        }
     }
 `
 
@@ -180,13 +237,9 @@ function Carrer() {
     const [info, setInfo] = useState<string>("")
     const [select, setSelect] = useState<string>("")
 
-    const [focused, setFocused] = useState<boolean>(false)
+    const [focused, setFocused] = useState<boolean>(true)
 
     const form = useRef<HTMLFormElement>(null)
-
-    const handleFocus = () => {
-        setFocused(true)
-    }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -209,7 +262,6 @@ function Carrer() {
                             type="text"
                             placeholder="Name"
                             onChange={(e) => setName(e.target.value)}
-                            onBlur={handleFocus}
                             required
                         />
                         <span>Required</span>
@@ -219,7 +271,6 @@ function Carrer() {
                             type="email"
                             placeholder="Email"
                             onChange={(e) => setEmail(e.target.value)}
-                            onBlur={handleFocus}
                             required
                         />
                         <span>Required</span>
@@ -237,7 +288,6 @@ function Carrer() {
                     <div>
                         <select
                             onChange={(e) => setSelect(e.target.value)}
-                            onBlur={handleFocus}
                             required
                         >
                             <option value="" disabled selected hidden>How did you hear about the position?</option>
