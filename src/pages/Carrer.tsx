@@ -39,8 +39,8 @@ const Top = styled.div<Props>`
 
     div{
         width: 100%;
-        height: 100%;
-        padding-bottom: 15px;
+        height: 50px;
+        margin-bottom:15px;
     }
 
     input{
@@ -107,13 +107,14 @@ const Bottom = styled.div`
 
     textarea{
         width: 100%;
-        height: 50%;
+        height: 40px;
         outline: none;
         border: none;
         padding-left: 20px;
         background-color:inherit;  
         border-bottom: 1px solid black;
         font-size: 18px;
+        resize: none;
         overflow: hidden;
 
         &::placeholder{
@@ -123,8 +124,8 @@ const Bottom = styled.div`
 
     div{
         width: 100%;
-        height: 100%;
-        padding-bottom: 15px;
+        height: 50px;
+        margin-bottom: 15px;
     }
 
     select{
@@ -151,7 +152,7 @@ const Bottom = styled.div`
     span{
         padding: 0 15px;
         color: red;
-        display: none
+        display: none;
     }
 `
 
@@ -242,7 +243,7 @@ function Carrer() {
                             <option value="" disabled selected hidden>How did you hear about the position?</option>
                             <option value="Facebook">Facebook</option>
                             <option value="Instagram">Instagram</option>
-                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="LinmkedIn">LinkedIn</option>
                             <option value="Word of mouth">Word of mouth</option>
                             <option value="Other">Other</option>
                         </select>
