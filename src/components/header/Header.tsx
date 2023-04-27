@@ -11,6 +11,7 @@ type Props = {
     rotateIcon?: boolean;
     background?: boolean;
     color?: string | undefined;
+    hidden?: boolean;
 }
 
 const HeaderContainer = styled.div`
@@ -163,7 +164,9 @@ const Rotate = styled.div<Props>`
 `
 
 const HiddenLink = styled.div`
-    background-color:rgba(254, 189, 48, 0.89);  
+    background-color:rgba(254, 189, 48, 0.89);
+    transition: all 0.5s ease; 
+    display: ${(props) => props.hidden ? "block" : "none"};
 `
 
 function Header() {
@@ -227,13 +230,11 @@ function Header() {
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
-                    <HiddenLink>
-                        {menu1 ? <div>
-                            <MenuLink padding="12px 30px"><a href="#">Football</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">American football</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">Futsal</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">Australian football</a></MenuLink>
-                        </div> : null}
+                    <HiddenLink hidden={menu1}>
+                        <MenuLink padding="12px 30px"><a href="#">Football</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">American football</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">Futsal</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">Australian football</a></MenuLink>
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a href="#">Basketball</a></MenuLink>
                     <MenuLink padding="15px 20px"><a href="#">Tennis</a></MenuLink>
@@ -243,14 +244,12 @@ function Header() {
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
-                    <HiddenLink>
-                        {menu2 ? <div>
-                            <MenuLink padding="12px 30px"><a href="#">NASCAR</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">Formula 1</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">IndyCar</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">NHRA</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">Moto GP</a></MenuLink>
-                        </div> : null}
+                    <HiddenLink hidden={menu2}>
+                        <MenuLink padding="12px 30px"><a href="#">NASCAR</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">Formula 1</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">IndyCar</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">NHRA</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">Moto GP</a></MenuLink>
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a href="#">Handball</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate3}>
@@ -259,13 +258,11 @@ function Header() {
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
-                    <HiddenLink>
-                        {menu3 ? <div>
-                            <MenuLink padding="12px 30px"><a href="#">Leauge of Legends</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">Valorant</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">CSGO</a></MenuLink>
-                            <MenuLink padding="12px 30px"><a href="#">Rocket Leauge</a></MenuLink>
-                        </div> : null}
+                    <HiddenLink hidden={menu3}>
+                        <MenuLink padding="12px 30px"><a href="#">Leauge of Legends</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">Valorant</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">CSGO</a></MenuLink>
+                        <MenuLink padding="12px 30px"><a href="#">Rocket Leauge</a></MenuLink>
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a>Forum</a></MenuLink>
                 </MenuItems>

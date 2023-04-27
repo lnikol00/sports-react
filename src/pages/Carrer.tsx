@@ -34,7 +34,7 @@ const Top = styled.div`
     padding: 2em 0;
 
     input{
-        width: 700px;
+        width: 470px;
         height:40px;
         outline: none;
         border: none;
@@ -46,6 +46,11 @@ const Top = styled.div`
          &::placeholder{
             color: black;
         }    
+    }
+
+    span{
+        padding: 0px 15px;
+        color: red;
     }
 `
 
@@ -96,6 +101,10 @@ const Bottom = styled.div`
         }    
     }
 
+    div{
+        width: 100%
+    }
+
     select{
         width: 100%;
         height:40px;
@@ -108,6 +117,10 @@ const Bottom = styled.div`
         cursor: pointer;
     }
     
+    span{
+        padding: 0 15px;
+        color: red;
+    }
 `
 
 const Button = styled.button`
@@ -130,6 +143,7 @@ const Button = styled.button`
 function Carrer() {
 
     const [name, setName] = useState<string>("")
+    const [nameFocus, setNameFocus] = useState("")
     const [email, setEmail] = useState<string>("")
 
 
@@ -143,15 +157,21 @@ function Carrer() {
             <Form>
                 <h1>Apply For Job</h1>
                 <Top>
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        pattern="^[A-Za-z]{3,16}?$"
-                    />
-                    <input
-                        type="email"
-                        placeholder="Email"
-                    />
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            pattern="^[A-Za-z]{3,16}?$"
+                        />
+                        <span>Required</span>
+                    </div>
+                    <div>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                        />
+                        <span>Required</span>
+                    </div>
                 </Top>
                 <Center>
                     <button>Upload CV/Resume</button>
@@ -161,13 +181,16 @@ function Carrer() {
                     <textarea
                         placeholder="Tell us something about yourself"
                     />
-                    <select>
-                        <option>Facebook</option>
-                        <option>Instagram</option>
-                        <option>LinkedIn</option>
-                        <option>Word of mouth</option>
-                        <option>Other</option>
-                    </select>
+                    <div>
+                        <select>
+                            <option>Facebook</option>
+                            <option>Instagram</option>
+                            <option>LinkedIn</option>
+                            <option>Word of mouth</option>
+                            <option>Other</option>
+                        </select>
+                        <span>Required</span>
+                    </div>
                 </Bottom>
                 <Button>
                     <HiIcons.HiOutlineChevronRight />
