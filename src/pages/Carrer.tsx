@@ -9,7 +9,7 @@ type Props = {
 const MainContainer = styled.div`
     margin-bottom: 700px;
 
-    @media screen and (max-width: 940px){
+    @media screen and (max-width: 1200px){
         margin-bottom: 800px;
     }
 `
@@ -40,15 +40,18 @@ const Form = styled.form`
         }
     }
 
-    @media screen and (max-width: 940px){
-        transform:translate(-50%, -35%);      
+    @media screen and (max-width: 1200px){
+        transform:translate(-50%, -30%);      
         height: 700px;
     }
     @media screen and (max-width: 850px){
-        transform:translate(-50%, -30%);      
+        width: 90%;     
     }
     @media screen and (max-width: 700px){
         padding: 5em 3em;
+        border-radius: 0;
+        width: 100%;
+        border: none;
     }
 `
 
