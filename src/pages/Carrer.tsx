@@ -1,6 +1,10 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import styled from "styled-components"
 import * as HiIcons from "react-icons/hi"
+
+type Props = {
+    focused?: boolean;
+}
 
 const MainContainer = styled.div`
     margin-bottom: 700px;
@@ -13,9 +17,9 @@ const Form = styled.form`
     position: absolute;
     top:50%;
     left: 50%;
-    transform:translate(-50%, -50%);
+    transform:translate(-50%, -45%);
     width: 80%;
-    height: 550px;
+    height: 600px;
     border: 1px solid black;
     border-radius: 40px;
     padding: 5em 7em;
@@ -26,31 +30,47 @@ const Form = styled.form`
     }
 `
 
-const Top = styled.div`
+const Top = styled.div<Props>`
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
     padding: 2em 0;
 
+    div{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 15px;
+    }
+
     input{
-        width: 470px;
-        height:40px;
+        width: 100%;
+        height: 100%;
         outline: none;
         border: none;
         padding-left: 20px;
+        margin-bottom: 10px;
         background-color:inherit;  
         border-bottom: 1px solid black;
         font-size: 18px;
 
          &::placeholder{
             color: black;
-        }    
+        }
+        
+        &:invalid {
+            border-bottom: 1px solid red;
+        }
+
+        &:invalid~span{
+            display: block;
+        }
     }
 
     span{
         padding: 0px 15px;
         color: red;
+        display: none
     }
 `
 
@@ -87,7 +107,7 @@ const Bottom = styled.div`
 
     textarea{
         width: 100%;
-        height:40px;
+        height: 50%;
         outline: none;
         border: none;
         padding-left: 20px;
@@ -102,24 +122,36 @@ const Bottom = styled.div`
     }
 
     div{
-        width: 100%
+        width: 100%;
+        height: 100%;
+        padding-bottom: 15px;
     }
 
     select{
         width: 100%;
-        height:40px;
+        height:100%;
         outline: none;
         border: none;
         padding-left: 20px;
+        margin-bottom: 10px;
         background-color:inherit;  
         border-bottom: 1px solid black;
         font-size: 18px;
         cursor: pointer;
+
+        &:invalid{
+            border-bottom: 1px solid red;
+        }
+
+        &:invalid~span{
+            display: block;
+        }
     }
     
     span{
         padding: 0 15px;
         color: red;
+        display: none
     }
 `
 
@@ -143,25 +175,41 @@ const Button = styled.button`
 function Carrer() {
 
     const [name, setName] = useState<string>("")
-    const [nameFocus, setNameFocus] = useState("")
     const [email, setEmail] = useState<string>("")
+    const [info, setInfo] = useState<string>("")
+    const [select, setSelect] = useState<string>("")
 
+    const [focused, setFocused] = useState<boolean>(false)
+
+    const form = useRef<HTMLFormElement>(null)
+
+    const handleFocus = () => {
+        setFocused(true)
+    }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        console.log(`Name: ${name},Mail: ${email}, Info: ${info}, Select: ${select} `)
+        form.current?.reset();
+        setName("");
+        setEmail("");
+        setInfo("");
+        setSelect("");
     }
 
 
     return (
         <MainContainer>
-            <Form>
+            <Form onSubmit={handleSubmit} ref={form}>
                 <h1>Apply For Job</h1>
                 <Top>
                     <div>
                         <input
                             type="text"
                             placeholder="Name"
-                            pattern="^[A-Za-z]{3,16}?$"
+                            onChange={(e) => setName(e.target.value)}
+                            onBlur={handleFocus}
+                            required
                         />
                         <span>Required</span>
                     </div>
@@ -169,6 +217,9 @@ function Carrer() {
                         <input
                             type="email"
                             placeholder="Email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            onBlur={handleFocus}
+                            required
                         />
                         <span>Required</span>
                     </div>
@@ -180,14 +231,20 @@ function Carrer() {
                 <Bottom>
                     <textarea
                         placeholder="Tell us something about yourself"
+                        onChange={(e) => setInfo(e.target.value)}
                     />
                     <div>
-                        <select>
-                            <option>Facebook</option>
-                            <option>Instagram</option>
-                            <option>LinkedIn</option>
-                            <option>Word of mouth</option>
-                            <option>Other</option>
+                        <select
+                            onChange={(e) => setSelect(e.target.value)}
+                            onBlur={handleFocus}
+                            required
+                        >
+                            <option value="" disabled selected hidden>How did you hear about the position?</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="Word of mouth">Word of mouth</option>
+                            <option value="Other">Other</option>
                         </select>
                         <span>Required</span>
                     </div>
