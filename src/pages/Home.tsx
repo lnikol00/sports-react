@@ -28,7 +28,6 @@ const Article = styled.article`
     align-items: center;
     flex-direction:row;
     padding: 5rem 8rem;
-    /* margin-bottom: 50px; */
 
     div{
         width:65%;
@@ -36,19 +35,62 @@ const Article = styled.article`
         h2{
             padding-bottom: 20px;
             font-size: 4rem;
+
+            @media screen and (max-width: 900px){
+                font-size: 3em;
+            }
+            @media screen and (max-width: 500px){
+                font-size: 2em;
+            }
         }
         p{
             padding-top: 20px;
             line-height: 2em;
+        
+            @media screen and (max-width: 500px){
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width:1200px){
+            width: 50%;
+        }
+        @media screen and (max-width:1000px){
+            width: 40%;
+        }
+        @media screen and (max-width:900px){
+            width: 100%;
         }
     }
 
     &:nth-child(odd){
         background-color: rgb(255, 200, 78);
     }
+
+    @media screen and (max-width:900px){
+        padding: 30px;
+    }
+
+    @media screen and (max-width: 500px){
+        span{
+            font-size: 18px;
+        }
+    }
 `
 const Image = styled.img`
     width: 30%; 
+
+    @media screen and (max-width:1200px){
+            width: 40%;
+        }
+    @media screen and (max-width:1000px){
+            width: 50%;
+        }
+    @media screen and (max-width:900px){
+            display: none;
+        }
+
+
 `
 
 function Home() {
