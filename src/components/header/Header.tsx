@@ -3,6 +3,8 @@ import * as FcIcons from "react-icons/fc"
 import * as FiIcons from "react-icons/fi"
 import * as HiIcons from "react-icons/hi"
 import { useState } from "react"
+import News from "../../pages/News"
+import { Link } from "react-router-dom"
 
 type Props = {
     openNavbar?: boolean;
@@ -225,7 +227,7 @@ function Header() {
                 <MenuItems>
                     <MenuLink padding="15px 20px"><a href="/">Home</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate1}>
-                        <a href="#">Foootball</a>
+                        <a href={`/news/${1}`}>Foootball</a>
                         <Rotate onClick={openMenu1} rotateIcon={rotate1}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
@@ -236,10 +238,10 @@ function Header() {
                         <MenuLink padding="12px 30px"><a href="#">Futsal</a></MenuLink>
                         <MenuLink padding="12px 30px"><a href="#">Australian football</a></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><a href="#">Basketball</a></MenuLink>
-                    <MenuLink padding="15px 20px"><a href="#">Tennis</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a href={`/news/${2}`}>Basketball</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a href={`/news/${3}`}>Tennis</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate2}>
-                        <a href="#">Racing</a>
+                        <a href={`/news/${4}`}>Racing</a>
                         <Rotate onClick={openMenu2} rotateIcon={rotate2}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
@@ -251,9 +253,9 @@ function Header() {
                         <MenuLink padding="12px 30px"><a href="#">NHRA</a></MenuLink>
                         <MenuLink padding="12px 30px"><a href="#">Moto GP</a></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><a href="#">Handball</a></MenuLink>
+                    <MenuLink padding="15px 20px"><a href={`/news/${5}`}>Handball</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate3}>
-                        <a href="#">E-sports</a>
+                        <a href={`/news/${6}`}>E-sports</a>
                         <Rotate onClick={openMenu3} rotateIcon={rotate3}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
