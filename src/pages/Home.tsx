@@ -20,6 +20,7 @@ type News = {
 }
 
 const MainContainer = styled.div`
+    background-color: ${(props) => (props.theme.body)}
 `
 const Article = styled.article`
     display:flex;

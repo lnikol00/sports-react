@@ -3,13 +3,11 @@ import * as FcIcons from "react-icons/fc"
 import * as FiIcons from "react-icons/fi"
 import * as HiIcons from "react-icons/hi"
 import { useState } from "react"
-import News from "../../pages/News"
-import { Link } from "react-router-dom"
+import Switch from "../other/Switch"
 
 type Props = {
     openNavbar?: boolean;
     padding?: string | undefined;
-    margin?: string | undefined;
     rotateIcon?: boolean;
     background?: boolean;
     color?: string | undefined;
@@ -267,6 +265,7 @@ function Header() {
                         <MenuLink padding="12px 30px"><a href="#">Rocket Leauge</a></MenuLink>
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a>Forum</a></MenuLink>
+                    <MenuLink padding="20px 20px"><Switch /></MenuLink>
                 </MenuItems>
             </Navbar>
 

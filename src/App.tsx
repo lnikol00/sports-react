@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Header from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -24,27 +24,33 @@ const MainContainer = styled.div`
   
 `
 
+const theme = {
+  background: "",
+  text: "",
+  body: "",
+}
+
 function App() {
   return (
-
-    <>
-      <AppContainer />
-      <Router>
-        <Header />
-        <MainContainer>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path='newsletter' element={<Newsletter />} />
-            <Route path='info' element={<Info />} />
-            <Route path='carrer' element={<Carrer />} />
-            <Route path='news/:id' element={<News />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </MainContainer>
-        <Footer />
-      </Router>
-    </>
-
+    <ThemeProvider theme={theme}>
+      <>
+        <AppContainer />
+        <Router>
+          <Header />
+          <MainContainer>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path='newsletter' element={<Newsletter />} />
+              <Route path='info' element={<Info />} />
+              <Route path='carrer' element={<Carrer />} />
+              <Route path='news/:id' element={<News />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </MainContainer>
+          <Footer />
+        </Router>
+      </>
+    </ThemeProvider>
   );
 }
 
