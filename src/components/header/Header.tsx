@@ -4,6 +4,7 @@ import * as FiIcons from "react-icons/fi"
 import * as HiIcons from "react-icons/hi"
 import { useState } from "react"
 import Switch from "../other/Switch"
+import { Link } from "react-router-dom"
 
 type Props = {
     openNavbar?: boolean;
@@ -57,7 +58,7 @@ export const Right = styled.div`
     }
 `
 
-const Text = styled.a`
+const Text = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +234,7 @@ function Header({ toggleTheme, isDarkTheme }: PassingProps) {
                     <div>
                         <Switch toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
                     </div>
-                    <Text href="/">
+                    <Text to="/">
                         <FcIcons.FcNews />
                         <h2>SportsWeek</h2>
                     </Text>
@@ -249,48 +250,48 @@ function Header({ toggleTheme, isDarkTheme }: PassingProps) {
                     </Close>
                 </Search>
                 <MenuItems>
-                    <MenuLink padding="15px 20px"><a href="/">Home</a></MenuLink>
+                    <MenuLink padding="15px 20px"><Link to="/">Home</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate1}>
-                        <a href={`/news/${1}`}>Football</a>
+                        <Link to={`/news/${1}`}>Football</Link>
                         <Rotate onClick={openMenu1} rotateIcon={rotate1}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
                     <HiddenLink hidden={menu1}>
-                        <MenuLink padding="12px 30px"><a href="#">Football</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">American football</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">Futsal</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">Australian football</a></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Football</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">American football</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Futsal</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Australian football</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><a href={`/news/${2}`}>Basketball</a></MenuLink>
-                    <MenuLink padding="15px 20px"><a href={`/news/${3}`}>Tennis</a></MenuLink>
+                    <MenuLink padding="15px 20px"><Link to={`/news/${2}`}>Basketball</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link to={`/news/${3}`}>Tennis</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate2}>
-                        <a href={`/news/${4}`}>Racing</a>
+                        <Link to={`/news/${4}`}>Racing</Link>
                         <Rotate onClick={openMenu2} rotateIcon={rotate2}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
                     <HiddenLink hidden={menu2}>
-                        <MenuLink padding="12px 30px"><a href="#">NASCAR</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">Formula 1</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">IndyCar</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">NHRA</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">Moto GP</a></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">NASCAR</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Formula 1</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">IndyCar</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">NHRA</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Moto GP</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><a href={`/news/${5}`}>Handball</a></MenuLink>
+                    <MenuLink padding="15px 20px"><Link to={`/news/${5}`}>Handball</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate3}>
-                        <a href={`/news/${6}`}>E-sports</a>
+                        <Link to={`/news/${6}`}>E-sports</Link>
                         <Rotate onClick={openMenu3} rotateIcon={rotate3}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
                     <HiddenLink hidden={menu3}>
-                        <MenuLink padding="12px 30px"><a href="#">Leauge of Legends</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">Valorant</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">CSGO</a></MenuLink>
-                        <MenuLink padding="12px 30px"><a href="#">Rocket Leauge</a></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Leauge of Legends</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Valorant</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">CSGO</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link to="#">Rocket Leauge</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><a>Forum</a></MenuLink>
+                    <MenuLink padding="15px 20px"><Link to="">Forum</Link></MenuLink>
                 </MenuItems>
             </Navbar>
 
