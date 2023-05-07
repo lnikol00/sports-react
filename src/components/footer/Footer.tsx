@@ -4,7 +4,6 @@ import * as FcIcons from "react-icons/fc"
 import * as FaIcons from "react-icons/fa"
 import * as BsIcons from "react-icons/bs"
 import image from "../../data/img/image.jpg"
-import { Link } from "react-router-dom"
 
 const FooterContainer = styled.div`
     display:flex;
@@ -27,6 +26,18 @@ const Top = styled.div`
         gap: 2em;
     }
 `
+const Text = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${(props) => (props.color)};
+    text-decoration: none;
+    
+    svg{
+        font-size:30px;
+    }
+`
+
 const Links = styled.div`
     display:flex;
     gap: 3em;
@@ -73,13 +84,13 @@ function Footer() {
     return (
         <FooterContainer>
             <Top>
-                <Right href="/" color="white">
+                <Right color="white">
                     <div>
                         <FcIcons.FcNews />
                     </div>
-                    <div>
+                    <Text href="/" color="white">
                         <h2>SportsWeek</h2>
-                    </div>
+                    </Text>
                 </Right>
                 <Links>
                     <a href="https://twitter.com/"><BsIcons.BsTwitter /></a>

@@ -27,7 +27,8 @@ const Form = styled.form`
     border: 1px solid black;
     border-radius: 40px;
     padding: 5em 7em;
-    background-color:rgba(254, 189, 48, 0.89); 
+    /* background-color:rgba(254, 189, 48, 0.89);  */
+    background-color: ${(props) => (props.theme.hiddenBackground)};
 
     h1{
         font-size: 3em;
@@ -76,11 +77,11 @@ const Top = styled.div<Props>`
         padding-left: 20px;
         margin-bottom: 10px;
         background-color:inherit;  
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid ${(props) => (props.theme.text)};
         font-size: 18px;
 
          &::placeholder{
-            color: black;
+            color: ${(props) => (props.theme.text)};
         }
         
         &:invalid {
@@ -124,7 +125,7 @@ const Center = styled.div`
         height:50px;
         outline: none;
         background-color: inherit;
-        border: 1px solid black;
+        border: 1px solid ${(props) => (props.theme.text)};
         border-radius: 16px;
         cursor: pointer;
 
@@ -140,6 +141,7 @@ const Center = styled.div`
     span{
         padding-top: 10px;
         font-size: 14px;
+        color:${(props) => (props.theme.text)};
     }
 `
 const Bottom = styled.div`
@@ -157,13 +159,13 @@ const Bottom = styled.div`
         border: none;
         padding-left: 20px;
         background-color:inherit;  
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid ${(props) => (props.theme.text)};
         font-size: 18px;
         resize: none;
         overflow: hidden;
 
         &::placeholder{
-            color: black;
+            color:${(props) => (props.theme.text)};
         }    
 
         @media screen and (max-width: 550px){
@@ -186,7 +188,8 @@ const Bottom = styled.div`
         padding-left: 20px;
         margin-bottom: 10px;
         background-color:inherit;  
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid ${(props) => (props.theme.text)};
+        color: ${(props) => (props.theme.text)};
         font-size: 18px;
         cursor: pointer;
 

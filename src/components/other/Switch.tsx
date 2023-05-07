@@ -7,6 +7,11 @@ type Props = {
     toggle: boolean;
 }
 
+type PassingProps = {
+    toggleTheme: any;
+    isDarkTheme: boolean;
+}
+
 const MainContainer = styled.div`
     display:flex;
     justify-content: space-between;
@@ -14,20 +19,17 @@ const MainContainer = styled.div`
     gap: 70px;
 `
 
-const Text = styled.div`
-    div{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        font-size: 18px;
-    }
+const Icon = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    gap: 20px;
 `
 const Label = styled.label`
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 30px;
+    width: 50px;
+    height: 25px;
 
     input{
         opacity: 0;
@@ -52,43 +54,38 @@ const Slider = styled.span<Props>`
     &::before{
         position: absolute;
         content: "";
-        height: 22px;
-        width: 22px;
+        height: 18px;
+        width: 18px;
         left: 4px;
-        bottom: 4px;
-        background-color: white;
+        bottom: 3.5px;
+        background-color: ${(props) => (props.theme.toggle)};
         border-radius: 16px;
-        transform: translateX(${(props) => (props.toggle ? "28px" : "0")});
+        transform: translateX(${(props) => (props.toggle ? "24px" : "0")});
         transition: all 0.5s ease;
     }
 `
 
-function Switch() {
+function Switch({ toggleTheme, isDarkTheme }: PassingProps) {
 
-    const [isToggled, setIsToggled] = useState<boolean>(false)
+    const [isToggled, setIsToggled] = useState(isDarkTheme)
 
     const onToggle = () => {
         setIsToggled(!isToggled)
+        toggleTheme();
     }
-
 
     return (
         <MainContainer>
-            <Text>
-                {isToggled ?
-                    <div>
-                        <FiIcons.FiMoon />
-                        <span>Dark Mode</span>
-                    </div> :
-                    <div>
-                        <BiIcons.BiSun />
-                        <span>Light Mode</span>
-                    </div>}
-            </Text>
+            <Icon>
+                <BiIcons.BiSun />
+            </Icon>
             <Label>
                 <input type="checkbox" onChange={onToggle} checked={isToggled} />
                 <Slider toggle={isToggled} />
             </Label>
+            <Icon>
+                <FiIcons.FiMoon />
+            </Icon>
         </MainContainer>
     )
 }

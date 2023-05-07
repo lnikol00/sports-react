@@ -14,8 +14,13 @@ type Props = {
     hidden?: boolean;
 }
 
+type PassingProps = {
+    toggleTheme: any;
+    isDarkTheme: boolean;
+}
+
 const HeaderContainer = styled.div`
-    background-color: #f5f5f5;
+    background-color: ${(props) => (props.theme.headerBackground)};
     position:sticky;
     top:0;
     z-index:4;
@@ -32,15 +37,34 @@ const Wrapper = styled.div`
     }
 `
 
-export const Right = styled.a`
+export const Right = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
     text-decoration: none;
-    /* color: black;*/
-    color: ${(props) => (props.color)};
-    gap:10px;
+    color: ${(props) => (props.theme.text)};
+    gap:20px;
 
+    svg{
+        font-size:30px;
+    }
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+`
+
+const Text = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: ${(props) => (props.theme.text)};
+    text-decoration: none;
+    
     svg{
         font-size:30px;
     }
@@ -57,7 +81,7 @@ const Left = styled.div`
     cursor: pointer;
 
     div{
-        background-color:black;
+        background-color:${(props) => (props.theme.text)};
         width: 1.7rem;
         height: 0.1em;
         border-radius:8px;
@@ -74,7 +98,8 @@ const Navbar = styled.nav<Props>`
     width:340px;
     height:100vh;
     padding-top:30px;
-    background-color:rgb(255, 200, 78);
+    background-color:${(props) => (props.theme.background)};
+    color:${(props) => (props.theme.text)};
     transition: all 500ms ease;
     z-index:5;
     overflow-y: scroll;
@@ -97,7 +122,7 @@ const Close = styled.div`
     cursor: pointer;
 
     div{
-        background-color:black;
+        background-color:${(props) => (props.theme.text)};
         width: 1.7rem;
         height: 0.1em;
         border-radius:8px;
@@ -126,7 +151,7 @@ const Search = styled.div`
     padding-left: 10px;
     margin-bottom:0.5em;
     padding-bottom:15px;
-    border-bottom:1px solid black;
+    border-bottom:1px solid ${(props) => (props.theme.text)};
     cursor: pointer;
 `
 const MenuItems = styled.ul`
@@ -140,10 +165,10 @@ const MenuLink = styled.li<Props>`
     padding: ${(props) => (props.padding)};
     width:300px;
     list-style:none;
-    background-color: ${(props) => (props.background ? "#ffb81b" : "none")};
+    background-color: ${(props) => (props.background ? `${(props.theme.hover)}` : "none")};
 
     a{
-        color: black;
+        color: ${(props) => (props.theme.text)};
         text-decoration:none;
         font-size:1em;
         font-weight:600;
@@ -151,7 +176,7 @@ const MenuLink = styled.li<Props>`
     }
 
     &:hover{
-        background-color: #ffb81b;
+        background-color: ${(props) => (props.theme.hover)};
     }
 `
 const Rotate = styled.div<Props>`
@@ -164,12 +189,12 @@ const Rotate = styled.div<Props>`
 `
 
 const HiddenLink = styled.div`
-    background-color:rgba(254, 189, 48, 0.89);
+    background-color:${(props) => (props.theme.hiddenBackground)};
     transition: all 0.5s ease; 
     display: ${(props) => props.hidden ? "block" : "none"};
 `
 
-function Header() {
+function Header({ toggleTheme, isDarkTheme }: PassingProps) {
 
     const [open, setOpen] = useState<boolean>(false)
     const [rotate1, setRotate1] = useState<boolean>(false)
@@ -204,13 +229,14 @@ function Header() {
                     <div></div>
                     <div></div>
                 </Left>
-                <Right href="/" color="black">
+                <Right>
                     <div>
+                        <Switch toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+                    </div>
+                    <Text href="/">
                         <FcIcons.FcNews />
-                    </div>
-                    <div>
                         <h2>SportsWeek</h2>
-                    </div>
+                    </Text>
                 </Right>
             </Wrapper>
             <Navbar openNavbar={open}>
@@ -225,7 +251,7 @@ function Header() {
                 <MenuItems>
                     <MenuLink padding="15px 20px"><a href="/">Home</a></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate1}>
-                        <a href={`/news/${1}`}>Foootball</a>
+                        <a href={`/news/${1}`}>Football</a>
                         <Rotate onClick={openMenu1} rotateIcon={rotate1}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
@@ -265,7 +291,6 @@ function Header() {
                         <MenuLink padding="12px 30px"><a href="#">Rocket Leauge</a></MenuLink>
                     </HiddenLink>
                     <MenuLink padding="15px 20px"><a>Forum</a></MenuLink>
-                    <MenuLink padding="20px 20px"><Switch /></MenuLink>
                 </MenuItems>
             </Navbar>
 

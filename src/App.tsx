@@ -8,6 +8,7 @@ import Info from './pages/Info';
 import Carrer from './pages/Carrer';
 import News from './pages/News';
 import NotFound from './pages/NotFound';
+import { useState } from 'react';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -24,19 +25,41 @@ const MainContainer = styled.div`
   
 `
 
-const theme = {
-  background: "",
-  text: "",
-  body: "",
+const darkTheme = {
+  headerBackground: "rgb(48, 48, 48)",
+  background: "rgb(15, 13, 13)",
+  hiddenBackground: "rgba(54, 51, 51, 0.89)",
+  text: "lightgray",
+  hover: "gray",
+  body: "rgb(95, 95, 95)",
+  toggle: "black"
+}
+
+const lightTheme = {
+  headerBackground: "#f5f5f5",
+  background: "rgb(255, 200, 78)",
+  hiddenBackground: "rgba(254, 189, 48, 0.89)",
+  text: "black",
+  hover: "#ffb81b",
+  body: "white",
+  toggle: "white",
 }
 
 function App() {
+
+  const [theme, setTheme] = useState<string>("light")
+  const isDarkTheme = theme === "dark";
+
+  const toggleTheme = () => {
+    setTheme(isDarkTheme ? "light" : "dark")
+  }
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <>
         <AppContainer />
         <Router>
-          <Header />
+          <Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <MainContainer>
             <Routes>
               <Route index element={<Home />} />

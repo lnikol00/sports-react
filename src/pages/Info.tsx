@@ -8,6 +8,8 @@ type staffData = {
 }
 
 const MainContainer = styled.div`
+    background-color:${(props) => (props.theme.body)};
+    color: ${(props) => (props.theme.text)};
     padding: 3% 10%;
 
     h1{

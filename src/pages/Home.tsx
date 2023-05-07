@@ -20,7 +20,8 @@ type News = {
 }
 
 const MainContainer = styled.div`
-    background-color: ${(props) => (props.theme.body)}
+    background-color: ${(props) => (props.theme.body)};
+    color: ${(props) => (props.theme.text)};
 `
 const Article = styled.article`
     display:flex;
@@ -37,7 +38,7 @@ const Article = styled.article`
         &::after{
             content: "";
             height: 0.3rem;
-            background-color: rgb(255, 200, 78);
+            background-color: ${(props) => (props.theme.background)};
             width: 100%;
             margin-left: 15px;
             margin-bottom: 15px;
@@ -77,7 +78,8 @@ const Article = styled.article`
     }
 
     &:nth-child(odd){
-        background-color: rgb(255, 200, 78);
+        /* background-color: rgb(255, 200, 78); */
+        background-color: ${(props) => (props.theme.background)};
     }
 
     @media screen and (max-width:900px){
