@@ -7,31 +7,27 @@ type Props = {
 }
 
 const MainContainer = styled.div`
-    margin-bottom: 700px;
-
-    @media screen and (max-width: 1200px){
-        margin-bottom: 800px;
-    }
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: ${(props) => (props.theme.body)};
 `
 
 const Form = styled.form`
     display:flex;
     justify-content:center;
     flex-direction: column;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform:translate(-50%, -45%);
     width: 80%;
     height: 600px;
     border: 1px solid black;
     border-radius: 40px;
     padding: 5em 7em;
-    /* background-color:rgba(254, 189, 48, 0.89);  */
+    margin: 40px 0;
     background-color: ${(props) => (props.theme.hiddenBackground)};
 
     h1{
         font-size: 3em;
+        color:${(props) => (props.theme.text)};
 
         @media screen and (max-width: 550px){
             font-size: 2.5em;
@@ -40,11 +36,10 @@ const Form = styled.form`
             font-size: 2em;
         }
     }
-
-    @media screen and (max-width: 1200px){
-        transform:translate(-50%, -30%);      
-        height: 700px;
+    @media screen and (max-width:900px){
+        height:650px;
     }
+
     @media screen and (max-width: 850px){
         width: 90%;     
     }
@@ -125,6 +120,7 @@ const Center = styled.div`
         height:50px;
         outline: none;
         background-color: inherit;
+        color: ${(props) => (props.theme.text)};
         border: 1px solid ${(props) => (props.theme.text)};
         border-radius: 16px;
         cursor: pointer;
