@@ -19,7 +19,9 @@ const Form = styled.form`
     width: 550px;
     height:400px;
     padding:4em;
-    background-color: #F8F4F5;
+    /* background-color: #F8F4F5; */
+    background-color: ${(props) => (props.theme.formBackground)};
+    color: ${(props) => (props.theme.text)};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +69,7 @@ const Input = styled.div`
     padding: 10px 15px;;
     width: 450px;
     border: 1px solid #8d8c8c;
-    background-color:white;
+    background-color:${(props) => (props.theme.toggle)};
 
     svg{
         font-size: 25px;
@@ -78,6 +80,8 @@ const Input = styled.div`
         outline: none;
         border: none;
         font-size: 20px;
+        background-color:${(props) => (props.theme.toggle)};
+        color:${(props) => (props.theme.text)};
     }
 
     @media screen and (max-width:600px){
@@ -89,7 +93,8 @@ const Input = styled.div`
     }
 `
 const Button = styled.button`
-    background-color:rgba(254, 189, 48, 0.89);
+    background-color: ${(props) => (props.theme.hiddenBackground)};
+    color:${(props) => (props.theme.text)};
     border: none;
     outline: none;
     margin-top: 3em;

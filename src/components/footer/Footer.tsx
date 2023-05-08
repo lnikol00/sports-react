@@ -4,6 +4,7 @@ import * as FcIcons from "react-icons/fc"
 import * as FaIcons from "react-icons/fa"
 import * as BsIcons from "react-icons/bs"
 import image from "../../data/img/image.jpg"
+import { Link } from "react-router-dom"
 
 const FooterContainer = styled.div`
     display:flex;
@@ -26,7 +27,7 @@ const Top = styled.div`
         gap: 2em;
     }
 `
-const Text = styled.a`
+const Text = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,21 +89,21 @@ function Footer() {
                     <div>
                         <FcIcons.FcNews />
                     </div>
-                    <Text href="/" color="white">
+                    <Text to="/" color="white">
                         <h2>SportsWeek</h2>
                     </Text>
                 </Right>
                 <Links>
-                    <a href="https://twitter.com/"><BsIcons.BsTwitter /></a>
-                    <a href="https://hr-hr.facebook.com/"><FaIcons.FaFacebookF /></a>
-                    <a href="https://www.instagram.com/"><BsIcons.BsInstagram /></a>
-                    <a href="https://www.pinterest.com.au/autoweekusa/"><FaIcons.FaPinterestP /></a>
+                    <Link to="https://twitter.com/"><BsIcons.BsTwitter /></Link>
+                    <Link to="https://hr-hr.facebook.com/"><FaIcons.FaFacebookF /></Link>
+                    <Link to="https://www.instagram.com/"><BsIcons.BsInstagram /></Link>
+                    <Link to="https://www.pinterest.com.au/autoweekusa/"><FaIcons.FaPinterestP /></Link>
                 </Links>
             </Top>
             <Center>
-                <a href="info">About us</a>
-                <a href="newsletter">Newsletter</a>
-                <a href="carrer">Careers</a>
+                <Link to="info">About us</Link>
+                <Link to="newsletter">Newsletter</Link>
+                <Link to="carrer">Careers</Link>
             </Center>
             <Image src={image} alt="slika" />
             <Bottom>
