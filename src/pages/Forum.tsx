@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 type CommentType = {
@@ -34,6 +35,10 @@ const Container = styled.div`
             margin: 0px auto;
             width: 5em;
         }
+
+        @media screen and (max-width:500px) {
+            font-size: 3em;
+        }
     }
 `
 
@@ -43,6 +48,7 @@ const Loading = styled.div`
 const ErrorMessage = styled.div`
     padding-bottom: 300px;
 `
+
 const CommentContainer = styled.div`
     border: 1px solid ${(props) => (props.theme.text)};
     border-radius: 5px;
@@ -53,11 +59,20 @@ const CommentContainer = styled.div`
     margin: 20px 0;
     background-color: ${(props) => (props.theme.background)};
     font-size: 18px;
+
+    @media screen and (max-width: 1000px){
+        flex-direction: column;
+    }
 `
 
 const CommentPersonal = styled.div`
     width: 30%;
     color: ${(props) => (props.theme.text)};
+
+    @media screen and (max-width:1000px) {
+      width: 100%;   
+      overflow: auto;
+    }
 `
 const CommentTopic = styled.div`
     margin-bottom: 10px;
@@ -73,6 +88,17 @@ const Image = styled.img`
 const CommentBody = styled.div`
     width: 60%;
     margin: 0px auto;
+
+    @media screen and (max-width: 1000px){
+        width: 100%;
+    }
+`
+const AddComment = styled.div`
+    font-size: 20px;
+
+    a{
+        color: ${(props) => (props.theme.text)};
+    }
 `
 
 function Forum() {
@@ -127,6 +153,9 @@ function Forum() {
                         )
                     })}
                 {error && <ErrorMessage>Soomething went wrong...</ErrorMessage>}
+                <AddComment>
+                    <Link to="add-comment">Add your comment</Link>
+                </AddComment>
             </Container>
         </MainContainer>
     )

@@ -13,6 +13,7 @@ import NotFound from './pages/NotFound';
 import ScrollToTop from './components/other/ScrollToTop';
 import Search from './pages/Search';
 import Forum from './pages/Forum';
+import AddComment from './pages/AddComment';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -75,6 +76,7 @@ function App() {
               <Route path='carrer' element={<Carrer />} />
               <Route path='search' element={<Search />} />
               <Route path='forum' element={<Forum />} />
+              <Route path='forum/add-comment' element={<AddComment />} />
               <Route path='news/:id' element={<News />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
