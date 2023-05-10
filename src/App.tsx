@@ -1,6 +1,8 @@
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import Header from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+
+import Header from './components/header/Header';
 import Home from './pages/Home';
 import Footer from './components/footer/Footer';
 import Newsletter from './pages/Newsletter';
@@ -8,8 +10,9 @@ import Info from './pages/Info';
 import Carrer from './pages/Carrer';
 import News from './pages/News';
 import NotFound from './pages/NotFound';
-import { useState } from 'react';
 import ScrollToTop from './components/other/ScrollToTop';
+import Search from './pages/Search';
+import Forum from './pages/Forum';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -70,6 +73,8 @@ function App() {
               <Route path='newsletter' element={<Newsletter />} />
               <Route path='info' element={<Info />} />
               <Route path='carrer' element={<Carrer />} />
+              <Route path='search' element={<Search />} />
+              <Route path='forum' element={<Forum />} />
               <Route path='news/:id' element={<News />} />
               <Route path='*' element={<NotFound />} />
             </Routes>

@@ -78,7 +78,6 @@ const Article = styled.article`
     }
 
     &:nth-child(odd){
-        /* background-color: rgb(255, 200, 78); */
         background-color: ${(props) => (props.theme.background)};
     }
 

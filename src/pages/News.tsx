@@ -18,9 +18,26 @@ function News() {
 
     return (
         <MainContainer>
-
-
-            aaa
+            {newsData.news.map((info) => {
+                return (
+                    <div>
+                        {info.info.map((something) => {
+                            return (
+                                <div>
+                                    <h2>{something.title}</h2>
+                                    <p>{something.news.map((random) => {
+                                        return (
+                                            <div>
+                                                {random.desc}
+                                            </div>
+                                        )
+                                    })}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                )
+            })}
         </MainContainer>
     )
 }

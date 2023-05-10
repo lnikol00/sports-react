@@ -9,22 +9,46 @@
                 {
                     "id": 1,
                     "title": "Football",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 2,
                     "title": "American Football",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 3,
                     "title": "Futsall",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 4,
                     "title": "Australian Football",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 }
             ]
         },
@@ -37,7 +61,13 @@
                 {
                     "id": 1,
                     "title": "Basketball",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 }
             ]
         },
@@ -50,7 +80,13 @@
                 {
                     "id": 1,
                     "title": "Tennis",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 }
             ]
         },
@@ -63,27 +99,57 @@
                 {
                     "id": 1,
                     "title": "NASCAR",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 2,
                     "title": "Formula 1",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 3,
                     "title": "IndyCar",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 4,
                     "title": "NHRA",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 5,
                     "title": "Moto GP",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 }
             ]
         },
@@ -96,7 +162,13 @@
                 {
                     "id": 1,
                     "title": "Handball",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 }
             ]
         },
@@ -109,22 +181,46 @@
                 {
                     "id": 1,
                     "title": "Leauge of Legends",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 2,
                     "title": "Valorant",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 3,
                     "title": "CSGO",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 },
                 {
                     "id": 4,
                     "title": "Rocket Leauge",
-                    "news": []
+                    "news": [
+                        {
+                            "id": 1,
+                            "image": "slika",
+                            "desc": "opis"
+                        }
+                    ]
                 }
             ]
         }

@@ -55,6 +55,14 @@ export const Right = styled.div`
         justify-content: center;
         align-items: center;
         gap: 10px;
+
+        @media screen and (max-width: 450px){
+            gap: 0;
+        }
+    }
+
+    @media screen and (max-width: 450px){
+            gap: 10px;
     }
 `
 
@@ -68,6 +76,10 @@ const Text = styled(Link)`
     
     svg{
         font-size:30px;
+    }
+
+    @media screen and (max-width: 450px){
+       gap: 10px;
     }
 `
 
@@ -137,9 +149,14 @@ const Close = styled.div`
     }
 `
 
-const Input = styled.h2`
+const Input = styled.h2 <Props>`
     font-size:18px;
     padding-right: 1em;
+
+    a{
+        text-decoration:none;
+        color:${(props) => (props.theme.text)};
+    }
 `
 
 const Search = styled.div`
@@ -243,55 +260,55 @@ function Header({ toggleTheme, isDarkTheme }: PassingProps) {
             <Navbar openNavbar={open}>
                 <Search>
                     <FiIcons.FiSearch />
-                    <Input>SEARCH</Input>
+                    <Input onClick={openNav}><Link to="search">SEARCH</Link></Input>
                     <Close onClick={openNav}>
                         <div></div>
                         <div></div>
                     </Close>
                 </Search>
                 <MenuItems>
-                    <MenuLink padding="15px 20px"><Link to="/">Home</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to="/">Home</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate1}>
-                        <Link to={`/news/${1}`}>Football</Link>
+                        <Link onClick={openNav} to={`/news/${1}`}>Football</Link>
                         <Rotate onClick={openMenu1} rotateIcon={rotate1}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
                     <HiddenLink hidden={menu1}>
-                        <MenuLink padding="12px 30px"><Link to="#">Football</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">American football</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">Futsal</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">Australian football</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Football</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">American football</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Futsal</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Australian football</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><Link to={`/news/${2}`}>Basketball</Link></MenuLink>
-                    <MenuLink padding="15px 20px"><Link to={`/news/${3}`}>Tennis</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${2}`}>Basketball</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${3}`}>Tennis</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate2}>
-                        <Link to={`/news/${4}`}>Racing</Link>
+                        <Link onClick={openNav} to={`/news/${4}`}>Racing</Link>
                         <Rotate onClick={openMenu2} rotateIcon={rotate2}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
                     <HiddenLink hidden={menu2}>
-                        <MenuLink padding="12px 30px"><Link to="#">NASCAR</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">Formula 1</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">IndyCar</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">NHRA</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">Moto GP</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">NASCAR</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Formula 1</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">IndyCar</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">NHRA</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Moto GP</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><Link to={`/news/${5}`}>Handball</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${5}`}>Handball</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate3}>
-                        <Link to={`/news/${6}`}>E-sports</Link>
+                        <Link onClick={openNav} to={`/news/${6}`}>E-sports</Link>
                         <Rotate onClick={openMenu3} rotateIcon={rotate3}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
                     </MenuLink>
                     <HiddenLink hidden={menu3}>
-                        <MenuLink padding="12px 30px"><Link to="#">Leauge of Legends</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">Valorant</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">CSGO</Link></MenuLink>
-                        <MenuLink padding="12px 30px"><Link to="#">Rocket Leauge</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Leauge of Legends</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Valorant</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">CSGO</Link></MenuLink>
+                        <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Rocket Leauge</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><Link to="">Forum</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to="forum">Forum</Link></MenuLink>
                 </MenuItems>
             </Navbar>
 
