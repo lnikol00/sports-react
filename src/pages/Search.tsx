@@ -44,6 +44,7 @@ const Button = styled.button`
     font-weight:700;
     letter-spacing: 5px;
     display: block;
+    cursor: pointer;
 
     @media screen and (max-width:1200px){
         display: none;
@@ -60,6 +61,7 @@ const SearchButton = styled.button`
     color: ${(props) => (props.theme.text)};
     font-size: 20px;
     display: none;
+    cursor: pointer;
 
     @media screen and (max-width:1200px){
         display: block;

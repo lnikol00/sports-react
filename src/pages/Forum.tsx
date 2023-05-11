@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import styled from "styled-components"
+import AddComment from "./AddComment"
+
 
 type CommentType = {
     postId: number
@@ -93,13 +94,6 @@ const CommentBody = styled.div`
         width: 100%;
     }
 `
-const AddComment = styled.div`
-    font-size: 20px;
-
-    a{
-        color: ${(props) => (props.theme.text)};
-    }
-`
 
 function Forum() {
 
@@ -153,10 +147,8 @@ function Forum() {
                         )
                     })}
                 {error && <ErrorMessage>Soomething went wrong...</ErrorMessage>}
-                <AddComment>
-                    <Link to="add-comment">Add your comment</Link>
-                </AddComment>
             </Container>
+            <AddComment />
         </MainContainer>
     )
 }
