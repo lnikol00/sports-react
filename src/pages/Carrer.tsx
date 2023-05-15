@@ -4,6 +4,7 @@ import * as HiIcons from "react-icons/hi"
 
 type Props = {
     focused?: boolean;
+    shown?: boolean | string;
 }
 
 const MainContainer = styled.div`
@@ -78,29 +79,10 @@ const Top = styled.div<Props>`
          &::placeholder{
             color: ${(props) => (props.theme.text)};
         }
-        
-        &:invalid {
-            border-bottom: 1px solid red;
-        }
-
-        &:invalid~span{
-            display: block;
-        }
 
         @media screen and (max-width: 550px){
             font-size: 16px;
             padding: 0;
-        }
-    }
-
-    span{
-        padding: 0px 15px;
-        color: red;
-        display: none;
-
-        @media screen and (max-width: 550px){
-            padding: 0;
-            font-size: 16px;
         }
     }
 
@@ -189,25 +171,6 @@ const Bottom = styled.div`
         font-size: 18px;
         cursor: pointer;
 
-        &:invalid{
-            border-bottom: 1px solid red;
-        }
-
-        &:invalid~span{
-            display: block;
-        }
-
-        @media screen and (max-width: 550px){
-            font-size: 16px;
-            padding: 0;
-        }
-    }
-    
-    span{
-        padding: 0 15px;
-        color: red;
-        display: none;
-
         @media screen and (max-width: 550px){
             font-size: 16px;
             padding: 0;
@@ -239,8 +202,6 @@ function Carrer() {
     const [info, setInfo] = useState<string>("")
     const [select, setSelect] = useState<string>("")
 
-    const [focused, setFocused] = useState<boolean>(true)
-
     const form = useRef<HTMLFormElement>(null)
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -266,7 +227,6 @@ function Carrer() {
                             onChange={(e) => setName(e.target.value)}
                             required
                         />
-                        <span>Required</span>
                     </div>
                     <div>
                         <input
@@ -275,7 +235,6 @@ function Carrer() {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
-                        <span>Required</span>
                     </div>
                 </Top>
                 <Center>
@@ -299,7 +258,6 @@ function Carrer() {
                             <option value="Word of mouth">Word of mouth</option>
                             <option value="Other">Other</option>
                         </select>
-                        <span>Required</span>
                     </div>
                 </Bottom>
                 <Button>
