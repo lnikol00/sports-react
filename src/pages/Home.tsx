@@ -1,7 +1,9 @@
 import styled from "styled-components"
-import newsData from "../data/newsData.json"
+import { useEffect, useState } from "react"
 
-type newsData = {
+type newsDataFiles = Array<newsData>
+
+export type newsData = {
     id: number,
     title: string,
     cathegories: string,
@@ -16,7 +18,11 @@ type infoData = {
 }
 
 type News = {
-
+    id: number,
+    image: string,
+    title: string,
+    date: string,
+    desc: string
 }
 
 const MainContainer = styled.div`
@@ -93,9 +99,18 @@ const Article = styled.article`
 `
 
 function Home() {
+
+    const [data, setData] = useState<newsDataFiles>([])
+
+    useEffect(() => {
+        fetch("http://localhost:3500/news")
+            .then((res) => res.json())
+            .then((json) => setData(json))
+    })
+
     return (
         <MainContainer>
-            {newsData.news.map((info, index) => {
+            {data.map((info, index) => {
                 return (
                     <Article key={index}>
                         <h2>

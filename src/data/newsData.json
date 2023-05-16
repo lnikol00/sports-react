@@ -12,18 +12,78 @@
                     "news": [
                         {
                             "id": 1,
-                            "image": "slika",
+                            "image": "https://e0.365dm.com/23/05/1600x900/skysports-relegation-nottingham-forest_6156560.jpg?20230515223513",
+                            "title": "Premier League relegation battle: Who of Leeds, Leicester, Forest and Everton will join Southampton in going down?",
+                            "date": "Monday 15 May 2023 22:54, UK",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 2,
+                            "image": "https://e0.365dm.com/23/05/384x216/skysports-inter-milan-goal_6151495.jpg?20230510213701",
+                            "title": "Inter Milan vs AC Milan LIVE! Leao returns from injury, hosts unchanged",
+                            "date": "15/05/23 3:57pm",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 3,
+                            "image": "https://e0.365dm.com/23/05/384x216/skysports-luton-town-sunderland_6156141.jpg?20230515161757",
+                            "title": "Play-offs: Luton vs Sunderland (agg 1-2) LIVE! & highlist",
+                            "date": "15/05/23 12:00pm",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 4,
+                            "image": "https://e1.365dm.com/23/05/384x216/skysports-kit-loferski-celtic-women_6155648.jpg?20230515085132",
+                            "title": "SWPL title race goes to final day with trio still in hunt",
+                            "date": "15/05/23 8:10am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 5,
+                            "image": "https://e1.365dm.com/23/05/384x216/skysports-espanyol-barcelona_6155626.jpg?20230515080931",
+                            "title": "Barca attacked by Espanyol ultras after sealing LaLiga title",
+                            "date": "14/05/23 9:53pm",
                             "desc": "opis"
                         }
                     ]
                 },
                 {
                     "id": 2,
-                    "title": "American Football",
+                    "title": "NFL",
                     "news": [
                         {
                             "id": 1,
-                            "image": "slika",
+                            "image": "https://e2.365dm.com/23/02/768x432/skysports-patrick-mahomes-kansas-city-chiefs_6055538.jpg?20230213045118",
+                            "title": "NFL schedule release 2023: Kansas City Chiefs to kick off new season against Detroit Lions",
+                            "date": "12/05/23 8:02am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 2,
+                            "image": "https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop/f_auto/league/qoyh3elmkru9dwmwri8c.jpg",
+                            "title": "Davante Adams: All-Pro season with Raiders 'meant a lot' but focus remains on winning Super Bowl",
+                            "date": "16/05/23 01:12pm",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 3,
+                            "image": "https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop/f_auto/league/t9q7fpyyjevu8ov1e4h3.jpg",
+                            "title": "Joe Burrow involved in contract extension talks with Bengals: 'I'm pretty clear on what I want'",
+                            "date": "16/05/23 01:47pm",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 4,
+                            "image": "https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop/f_auto/league/whuzmvki9mfpg4dw7tkz.jpg",
+                            "title": "NFL news roundup: Latest league updates from Tuesday, May 16",
+                            "date": "12/05/23 12:31pm",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 5,
+                            "image": "https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop/f_auto/league/n5keqxgptkul5qyqpqyk.jpg",
+                            "title": "Commanders' Ron Rivera believes Antonio Gibson can still play key role, wants to see RB more involved in '23",
+                            "date": "16/05/23 10:23am",
                             "desc": "opis"
                         }
                     ]
@@ -34,18 +94,78 @@
                     "news": [
                         {
                             "id": 1,
-                            "image": "slika",
+                            "image": "https://www.futsalfocus.net/wp-content/uploads/2023/04/Solomon-Islands-futsal-1024x691.jpg",
+                            "title": "THE EXTRA SUPERMARKET MELANESIAN FUTSAL CUP 2023, FIJI",
+                            "date": "07/04/23 11:34am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 2,
+                            "image": "http://www.futsalplanet.com/images/gallery/news/882_news-ufclf4palma23.jpg",
+                            "title": "UEFA Futsal Champions League 22/23",
+                            "date": "01/05/23 03:00am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 3,
+                            "image": "https://www.futsalfocus.net/wp-content/uploads/2023/04/Solomon-Islands-1024x683.jpg",
+                            "title": "English Futsal Coach Damon Shaw wins his first trophy as the new Head Coach of the Solomon Islands, the 2023 Extra Supermarket Melanesian Futsal Cup, Fiji",
+                            "date": "17/04/23 05:46am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 4,
+                            "image": "https://www.futsalfocus.net/wp-content/uploads/2023/03/US-National-Womens-Futsal-team-340x221.jpg",
+                            "title": "U.S. WOMEN’S FUTSAL NATIONAL TEAM FIRST ID CAMPS HAVE BEGUN",
+                            "date": "24/03/23 12:01pm",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 5,
+                            "image": "https://www.futsalfocus.net/wp-content/uploads/2023/03/French-Futsal.jpg",
+                            "title": "FRANCE TO PLAY INTERNATIONAL TOURNAMENT IN MOROCCO",
+                            "date": "14/03/23 09:12am",
                             "desc": "opis"
                         }
                     ]
                 },
                 {
                     "id": 4,
-                    "title": "Australian Football",
+                    "title": "Rugby",
                     "news": [
                         {
                             "id": 1,
-                            "image": "slika",
+                            "image": "https://e1.365dm.com/22/11/768x432/skysports-england-australia_5973938.jpg?20221121175634",
+                            "title": "New Zealand keen to host 2025 World Cup with Australia after France pull-out",
+                            "date": "16/05/23 7:34am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 2,
+                            "image": "https://e2.365dm.com/23/05/384x216/skysports-hull-fc-rugby-league_6157360.jpg?20230516182757",
+                            "title": "Evans released from Hull FC contract | Ford leaves Trinity for new role",
+                            "date": "14/05/23 09:21am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 3,
+                            "image": "https://e0.365dm.com/23/05/384x216/skysports-james-roby-super-league_6154049.jpg?20230513153004",
+                            "title": "Saints see off Salford as Roby celebrates 532nd appearance",
+                            "date": "13/05 07:24pm",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 4,
+                            "image": "https://e1.365dm.com/23/05/384x216/skysports-sinfield-burrow-leeds_6155050.jpg?20230514155606",
+                            "title": "Sinfield emotionally carries Burrow over finish line at Leeds Marathon",
+                            "date": "13/05/23 05:14am",
+                            "desc": "opis"
+                        },
+                        {
+                            "id": 5,
+                            "image": "https://e0.365dm.com/23/05/384x216/skysports-wakefield-trinity_6150167.jpg?20230509133349",
+                            "title": "Can Trinity turn the tide as Gale included to face Hull FC?",
+                            "date": "10/05/23 12:01pm",
                             "desc": "opis"
                         }
                     ]
@@ -65,6 +185,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -84,6 +206,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -103,6 +227,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -114,6 +240,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -125,6 +253,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -136,6 +266,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -147,6 +279,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -166,6 +300,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -185,6 +321,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -196,6 +334,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -207,6 +347,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]
@@ -218,6 +360,8 @@
                         {
                             "id": 1,
                             "image": "slika",
+                            "title": "Something",
+                            "date": "Neki",
                             "desc": "opis"
                         }
                     ]

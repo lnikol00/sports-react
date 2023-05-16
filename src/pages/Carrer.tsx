@@ -4,7 +4,6 @@ import * as HiIcons from "react-icons/hi"
 
 type Props = {
     focused?: boolean;
-    shown?: boolean | string;
 }
 
 const MainContainer = styled.div`
