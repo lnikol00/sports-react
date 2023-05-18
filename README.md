@@ -14,6 +14,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `npx json-server --watch src/data/newsData.json --port 3500`
+
+This will run the newsData.json server and run it on port 3500. This way we display data from json-server in our app. This is just
+one of the ways.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
