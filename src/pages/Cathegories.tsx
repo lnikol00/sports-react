@@ -87,7 +87,7 @@ const Article = styled.article`
     }
 `
 
-function News() {
+function Cathegories() {
 
     const params = useParams();
 
@@ -125,4 +125,4 @@ function News() {
     )
 }
 
-export default News
+export default Cathegories
