@@ -3,9 +3,6 @@ import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { newsData } from "./Home";
 
-type Info = {
-    id: string | number;
-}
 
 const MainContainer = styled.div`
     background-color: ${(props) => (props.theme.body)};
@@ -44,25 +41,35 @@ const NewsContainer = styled.div`
 
 const Article = styled.article`
     width: 300px;   
+    padding-bottom: 10px;
+    box-shadow: 1px 3px 5px ${(props) => (props.theme.article)};
+    transition:all 0.5s ease;
 
+    &:hover{
+        transform: scale(0.97);
+    }
+    
     a{
         text-decoration: none;
         color: ${(props) => (props.theme.text)};
     }
 
     &:first-child{
-        /* width: 820px; */
         width: 85%;
         grid-column: span 4;
 
         h5{
             font-size: 30px;
-            padding: 10px 0;
+            padding: 10px;
         }
         
         span{
             font-size:18px;
-            padding-left: 10px;
+            padding: 10px;
+        }
+
+        &:hover{
+        transform: scale(0.98);
         }
     }
     
@@ -72,7 +79,11 @@ const Article = styled.article`
 
     h5{
         font-size: 20px;
-        padding: 10px 0;
+        padding: 10px;
+    }
+
+    span{
+        padding: 10px;
     }
 `
 

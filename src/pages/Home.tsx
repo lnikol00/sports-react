@@ -11,7 +11,7 @@ export type newsData = {
     info: infoData[],
 }
 
-type infoData = {
+export type infoData = {
     id: number,
     title: string,
     news: News[],

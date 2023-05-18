@@ -14,6 +14,7 @@ import ScrollToTop from './components/other/ScrollToTop';
 import Search from './pages/Search';
 import Forum from './pages/Forum';
 import AddComment from './pages/AddComment';
+import Articles from './pages/Articles';
 
 const AppContainer = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -38,7 +39,8 @@ const darkTheme = {
   text: "lightgray",
   hover: "gray",
   body: "rgb(95, 95, 95)",
-  toggle: "black"
+  toggle: "black",
+  article: "rgba(255,255,255,0.1)"
 }
 
 const lightTheme = {
@@ -50,6 +52,7 @@ const lightTheme = {
   hover: "#ffb81b",
   body: "white",
   toggle: "white",
+  article: "rgba(0,0,0,0.1)"
 }
 
 function App() {
@@ -77,6 +80,7 @@ function App() {
               <Route path='search' element={<Search />} />
               <Route path='forum' element={<Forum />} />
               <Route path='news/:id' element={<News />} />
+              <Route path='news/:id/info/:id' element={<Articles />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
           </MainContainer>

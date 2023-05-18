@@ -280,7 +280,7 @@ function Header({ toggleTheme, isDarkTheme }: PassingProps) {
                         <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Futsal</Link></MenuLink>
                         <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Rugby</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${2}`}>Basketball</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${2}/info/${1}`}>Basketball</Link></MenuLink>
                     <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${3}`}>Tennis</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate2}>
                         <Link onClick={openNav} to={`/news/${4}`}>Racing</Link>
