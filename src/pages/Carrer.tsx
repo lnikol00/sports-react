@@ -92,35 +92,6 @@ const Top = styled.div<Props>`
     }
 `
 
-const Center = styled.div`
-    display:flex;
-    flex-direction: column;
-
-    button{
-        width: 250px;
-        height:50px;
-        outline: none;
-        background-color: inherit;
-        color: ${(props) => (props.theme.text)};
-        border: 1px solid ${(props) => (props.theme.text)};
-        border-radius: 16px;
-        cursor: pointer;
-
-        &:hover{
-            background-color: rgba(255,255,255,0.2);
-        }
-
-        @media screen and (max-width: 450px){
-            width: 100%;
-        }
-    }
-
-    span{
-        padding-top: 10px;
-        font-size: 14px;
-        color:${(props) => (props.theme.text)};
-    }
-`
 const Bottom = styled.div`
     display: flex;
     justify-content: flex-start;
@@ -236,10 +207,6 @@ function Carrer() {
                         />
                     </div>
                 </Top>
-                <Center>
-                    <button>Upload CV/Resume</button>
-                    <span>Minimum file size 5MB</span>
-                </Center>
                 <Bottom>
                     <textarea
                         placeholder="Tell us something about yourself"

@@ -269,7 +269,7 @@ function Header({ toggleTheme, isDarkTheme }: PassingProps) {
                 <MenuItems>
                     <MenuLink padding="15px 20px"><Link onClick={openNav} to="/">Home</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate1}>
-                        <Link onClick={openNav} to={`/news/${1}/cathegories`}>Football</Link>
+                        <Link onClick={openNav} to={`/news/${1}`}>Football</Link>
                         <Rotate onClick={openMenu1} rotateIcon={rotate1}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
@@ -280,10 +280,10 @@ function Header({ toggleTheme, isDarkTheme }: PassingProps) {
                         <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Futsal</Link></MenuLink>
                         <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Rugby</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${2}`}>Basketball</Link></MenuLink>
-                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${3}`}>Tennis</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${2}/info`}>Basketball</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${3}/info`}>Tennis</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate2}>
-                        <Link onClick={openNav} to={`/news/${4}/cathegories`}>Racing</Link>
+                        <Link onClick={openNav} to={`/news/${4}`}>Racing</Link>
                         <Rotate onClick={openMenu2} rotateIcon={rotate2}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>
@@ -295,9 +295,9 @@ function Header({ toggleTheme, isDarkTheme }: PassingProps) {
                         <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">NHRA</Link></MenuLink>
                         <MenuLink padding="12px 30px"><Link onClick={openNav} to="#">Moto GP</Link></MenuLink>
                     </HiddenLink>
-                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${5}`}>Handball</Link></MenuLink>
+                    <MenuLink padding="15px 20px"><Link onClick={openNav} to={`/news/${5}/info`}>Handball</Link></MenuLink>
                     <MenuLink content="space-between" padding="15px 20px" background={rotate3}>
-                        <Link onClick={openNav} to={`/news/${6}/cathegories`}>E-sports</Link>
+                        <Link onClick={openNav} to={`/news/${6}`}>E-sports</Link>
                         <Rotate onClick={openMenu3} rotateIcon={rotate3}>
                             <HiIcons.HiOutlineChevronRight />
                         </Rotate>

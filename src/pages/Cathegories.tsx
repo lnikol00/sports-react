@@ -94,7 +94,7 @@ function Cathegories() {
     const [singleData, setSingleData] = useState<newsData>()
 
     useEffect(() => {
-        fetch(`http://localhost:3500/news/${params.id}`)
+        fetch(`http://localhost:3500/news/${params.id}?_embed=info`)
             .then((res) => res.json())
             .then((json) => setSingleData(json))
     })
@@ -106,7 +106,7 @@ function Cathegories() {
                     <Wrapper key={info.id}>
                         <h3>{info.title}</h3>
                         <NewsContainer>
-                            {info.news.map((news) => {
+                            {info.news.slice(0, 5).map((news) => {
                                 return (
                                     <Article key={news.id}>
                                         <Link to="">

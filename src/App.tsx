@@ -8,7 +8,6 @@ import Footer from './components/footer/Footer';
 import Newsletter from './pages/Newsletter';
 import Info from './pages/Info';
 import Carrer from './pages/Carrer';
-import News from './pages/Cathegories';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/other/ScrollToTop';
 import Search from './pages/Search';
@@ -79,8 +78,8 @@ function App() {
               <Route path='carrer' element={<Carrer />} />
               <Route path='search' element={<Search />} />
               <Route path='forum' element={<Forum />} />
-              <Route path='news/:id/cathegories' element={<Cathegories />} />
-              <Route path='news/:id/articles' element={<Articles />} />
+              <Route path='news/:id/' element={<Cathegories />} />
+              <Route path='news/:id/info' element={<Articles />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
           </MainContainer>
